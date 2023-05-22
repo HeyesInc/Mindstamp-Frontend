@@ -8,7 +8,7 @@ export default function EditPost({ isLoggedIn }) {
 
   useEffect(() => {
     if (isLoggedIn) {
-      fetch(`http://localhost:8080/posts/${postId}`, {
+      fetch(`/posts/${postId}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
@@ -17,6 +17,9 @@ export default function EditPost({ isLoggedIn }) {
         .then((res) => res.json())
         .then((result) => {
           setContent(result.content);
+        })
+        .catch((error) => {
+          console.log(error);
         });
     } else {
       navigate("/");
@@ -24,17 +27,21 @@ export default function EditPost({ isLoggedIn }) {
   }, []);
 
   const handleDelete = () => {
-    fetch(`http://localhost:8080/posts/${postId}`, {
+    fetch(`/posts/${postId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
       },
-    }).then(() => navigate("/profile"));
+    })
+      .then(() => navigate("/profile"))
+      .catch((error) => {
+        console.log(error);
+      });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     const post = { content };
-    fetch(`http://localhost:8080/posts/${postId}`, {
+    fetch(`/posts/${postId}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,

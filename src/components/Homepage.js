@@ -5,7 +5,7 @@ export default function Homepage({ isLoggedIn }) {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     if (isLoggedIn) {
-      fetch("http://localhost:8080/posts", {
+      fetch("/posts", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
@@ -14,6 +14,9 @@ export default function Homepage({ isLoggedIn }) {
         .then((res) => res.json())
         .then((result) => {
           setPosts(result);
+        })
+        .catch((error) => {
+          console.log(error);
         });
     }
   }, []);

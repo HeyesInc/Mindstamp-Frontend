@@ -18,7 +18,6 @@ export default function Topbar() {
       try {
         const decoded = jwtDecode(jwt);
         const currentTime = Date.now() / 1000;
-        console.log(decoded.exp, currentTime);
         if (decoded.exp > currentTime) {
           setIsLoggedIn(true);
         } else {

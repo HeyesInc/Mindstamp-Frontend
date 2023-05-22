@@ -7,9 +7,8 @@ export default function Profile({ isLoggedIn }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(isLoggedIn);
     if (isLoggedIn) {
-      fetch("http://localhost:8080/users/posts", {
+      fetch("/users/posts", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
@@ -17,8 +16,10 @@ export default function Profile({ isLoggedIn }) {
       })
         .then((res) => res.json())
         .then((result) => {
-          console.log(result);
           setPosts(result);
+        })
+        .catch((error) => {
+          console.log(error);
         });
     } else {
       navigate("/");

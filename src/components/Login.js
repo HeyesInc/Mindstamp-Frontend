@@ -14,7 +14,7 @@ export default function CreateBlog() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = { username, password };
-    fetch("http://localhost:8080/users/auth/authenticate", {
+    fetch("/users/auth/authenticate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user), // converts JS object to JSON string

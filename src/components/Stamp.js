@@ -8,7 +8,7 @@ export default function CreateBlog() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const post = { content };
-    fetch("http://localhost:8080/users/posts", {
+    fetch("/users/posts", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
