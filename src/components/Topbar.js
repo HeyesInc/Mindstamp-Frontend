@@ -3,6 +3,7 @@ import Homepage from "./Homepage";
 import Register from "./Register";
 import EditPost from "./EditPost";
 import Login from "./Login";
+import Logout from "./Logout";
 import Stamp from "./Stamp";
 import Profile from "./Profile";
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
@@ -28,6 +29,8 @@ export default function Topbar() {
         localStorage.removeItem("jwtToken");
         setIsLoggedIn(false);
       }
+    } else if (isLoggedIn) {
+      setIsLoggedIn(false);
     }
   }, []);
 
@@ -53,6 +56,10 @@ export default function Topbar() {
                 <span>/</span>
                 <li>
                   <Link to="/stamp">stamp</Link>
+                </li>
+                <span>/</span>
+                <li>
+                  <Link to="/logout">logout</Link>
                 </li>
               </ul>
             ) : (
@@ -84,6 +91,11 @@ export default function Topbar() {
         <Route exact path="/register" element={<Register />}></Route>
         <Route exact path="/login" element={<Login />}></Route>
         <Route exact path="/stamp" element={<Stamp />}></Route>
+        <Route
+          exact
+          path="/logout"
+          element={<Logout isLoggedIn={isLoggedIn} />}
+        ></Route>
         <Route
           exact
           path="/profile"
