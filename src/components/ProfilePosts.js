@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LikeDislikeButton from "./LikeDislikeButton";
 
 export default function ProfilePosts({ posts }) {
   const postsReversed = posts.slice().reverse();
@@ -18,6 +19,7 @@ export default function ProfilePosts({ posts }) {
                   </div>
                 </div>
               </div>
+              <LikeDislikeButton postId={post.id}></LikeDislikeButton>
               <Link to={"/edit/" + post.id} className="edit">
                 Edit
               </Link>

@@ -5,7 +5,6 @@ export default function CreateBlog() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState("");
 
   const handlePageRefresh = () => {
     window.location.reload();

@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-
+import LikeDislikeButton from "./LikeDislikeButton";
 export default function HomepagePosts({ posts }) {
   const postsReversed = posts.slice().reverse();
 
@@ -19,6 +18,7 @@ export default function HomepagePosts({ posts }) {
                   </div>
                 </div>
               </div>
+              <LikeDislikeButton postId={post.id}></LikeDislikeButton>
             </div>
           );
         })}

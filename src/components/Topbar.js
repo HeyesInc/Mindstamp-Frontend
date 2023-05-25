@@ -32,7 +32,7 @@ export default function Topbar() {
     } else if (isLoggedIn) {
       setIsLoggedIn(false);
     }
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <BrowserRouter>

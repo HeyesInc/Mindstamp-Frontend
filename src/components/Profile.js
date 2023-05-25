@@ -24,7 +24,7 @@ export default function Profile({ isLoggedIn }) {
     } else {
       navigate("/");
     }
-  }, []);
+  }, [isLoggedIn, navigate]);
   return (
     <div className="width">
       <ProfilePosts posts={posts} />
