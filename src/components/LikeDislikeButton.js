@@ -23,10 +23,6 @@ export default function LikeDislikeButton({ postId }) {
       });
   }, [postId]);
 
-  const handlePageRefresh = () => {
-    window.location.reload();
-  };
-
   const handleLike = () => {
     fetch("/posts/" + postId + "/like", {
       method: "POST",
