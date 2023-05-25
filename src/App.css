@@ -1,6 +1,17 @@
 * {
   font-family: "Old Standard TT", sans-serif;
   box-sizing: content-box;
+}
+
+a {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+h2 {
   color: white;
 }
 
@@ -144,6 +155,7 @@ a:hover {
 span {
   padding-left: 16px;
   padding-right: 16px;
+  color: white;
 }
 
 .form-outside {
@@ -314,6 +326,14 @@ button:focus {
   color: #e6e5e5 !important;
   width: fit-content !important;
   margin-top: 40px;
+}
+
+.hidden-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
 }
 
 .grid {

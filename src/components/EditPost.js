@@ -24,7 +24,7 @@ export default function EditPost({ isLoggedIn }) {
     } else {
       navigate("/");
     }
-  }, []);
+  }, [isLoggedIn, postId, navigate]);
 
   const handleDelete = () => {
     fetch(`/posts/${postId}`, {

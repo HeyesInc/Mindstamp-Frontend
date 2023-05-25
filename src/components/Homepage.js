@@ -19,7 +19,7 @@ export default function Homepage({ isLoggedIn }) {
           console.log(error);
         });
     }
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <div className="width">
