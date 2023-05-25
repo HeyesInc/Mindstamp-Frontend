@@ -31,12 +31,10 @@ body {
 }
 
 .main {
-  position: absolute;
   font-size: 130px;
   color: #3592b7;
   margin-left: 10vw;
   margin-top: -44px;
-  margin-bottom: -20px;
 }
 
 .main:hover {
@@ -279,7 +277,7 @@ button:focus {
 }
 
 .-username {
-  color: #59595a;
+  color: #8a8a8c;
 }
 
 .prevent-select {

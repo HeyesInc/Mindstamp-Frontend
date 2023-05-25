@@ -1,4 +1,4 @@
-import HomepagePosts from "./HomepagePosts";
+import Posts from "./Posts";
 import React, { useState, useEffect } from "react";
 
 export default function Homepage({ isLoggedIn }) {
@@ -24,7 +24,7 @@ export default function Homepage({ isLoggedIn }) {
   return (
     <div className="width">
       {isLoggedIn ? (
-        <HomepagePosts posts={posts} />
+        <Posts posts={posts} postType={"Home"} />
       ) : (
         <p>Please log in to access the content.</p>
       )}

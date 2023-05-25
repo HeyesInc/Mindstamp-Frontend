@@ -17,6 +17,7 @@ export default function CreateBlog() {
       body: JSON.stringify(post),
     })
       .then(() => {
+        console.log(post);
         navigate("/");
       })
       .catch((error) => {

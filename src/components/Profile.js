@@ -1,4 +1,4 @@
-import ProfilePosts from "./ProfilePosts";
+import Posts from "./Posts";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +27,7 @@ export default function Profile({ isLoggedIn }) {
   }, [isLoggedIn, navigate]);
   return (
     <div className="width">
-      <ProfilePosts posts={posts} />
+      <Posts posts={posts} postType={"Profile"} />
     </div>
   );
 }
